@@ -71,6 +71,11 @@ class Nest
     protected $cache_expiration;
     protected $last_status;
 
+    protected $issue_token;
+    protected $cookies;
+    protected $username;
+    protected $password;
+
     /**
      * Constructor
      *
@@ -1141,7 +1146,6 @@ class Nest
         } else {
                 return "device has no hot water control";
         }
-        return "error";
     }
 
     /* Helper functions */
