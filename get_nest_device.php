@@ -11,11 +11,7 @@ require_once 'nest.auth.php';
 // See http://php.net/manual/en/timezones.php for the possible values.
 date_default_timezone_set('Europe/Amsterdam');
 
-$nest = new Nest(
-  ($username == $username | NULL), 
-  ($password == $password | NULL), 
-  ($issue_token == $issue_token | NULL), 
-  ($cookies == $cookies | NULL));
+$nest = new Nest(($username ?: NULL), ($password ?: NULL), ($issue_token ?: NULL), ($cookies ?: NULL));
 
 $devices_serials = $nest->getDevices();
 foreach ($devices_serials as $value) {
