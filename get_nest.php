@@ -11,15 +11,11 @@ require_once 'nest.auth.php';
 // See http://php.net/manual/en/timezones.php for the possible values.
 date_default_timezone_set('Europe/Amsterdam');
 
-// Here's how to use this class:
-
-// $nest = new Nest($username, $password);
-
-// Or use a Google account (see instructions below on how to find those values):
-#$nest = new Nest(NULL, NULL, $issue_token, $cookies);
-$nest = new Nest($username, $password, $issue_token, $cookies);
-
-
+$nest = new Nest(
+  ($username == $username | NULL), 
+  ($password == $password | NULL), 
+  ($issue_token == $issue_token | NULL), 
+  ($cookies == $cookies | NULL));
 
 echo "Location information:\n";
 $locations = $nest->getUserLocations();
